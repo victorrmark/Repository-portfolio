@@ -1,0 +1,29 @@
+.prev-next{
+    background: #edf2f7;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.prev-next:hover{
+    background: #ebedf0;
+}
+
+.prev-next:active {
+  background-color: #3b82f6;
+}
+
+.prev-next:disabled {
+  background-color: #e5e7eb;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.pagination-btn.focused:hover {
+  background-color: #3b82f6;
+}
+
+.pagination-btn.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+
