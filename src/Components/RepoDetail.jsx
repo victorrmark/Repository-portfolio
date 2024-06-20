@@ -117,19 +117,22 @@ const RepoDetail = () => {
 
             <CardFooter>
               <Stack spacing={5} direction="row">
-                {repo.homepage && (
-                  <Button
-                    as="a"
-                    variant="ghost"
-                    href={repo.homepage}
-                    target="_blank"
-                  >
-                    Website
-                  </Button>
-                )}
+                
                 <Button as={Link} to="/" leftIcon={<ArrowBackIcon />}>
                   Go Back
                 </Button>
+
+                {repo.homepage && (
+                  <Button
+                    as="a"
+                    colorScheme="blue"
+                    href={repo.homepage}
+                    target="_blank"
+                  >
+                    Live Site
+                  </Button>
+                )}
+                
               </Stack>
             </CardFooter>
           </Card>
