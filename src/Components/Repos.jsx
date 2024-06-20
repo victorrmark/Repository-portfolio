@@ -73,8 +73,8 @@ const Repos = () => {
 
         {repos && filteredRepos ? (
           <Box as="div" p="20px">
-            <Box mb='15px' display='flex' justifyContent='space-between'>
-              <Heading>Repository Portfolio</Heading>
+            <Box mb='15px' display='flex' justifyContent='flex-end'>
+              {/* <Heading>Repository Portfolio</Heading> */}
               <NewRepoModal />
             </Box>
             <SimpleGrid spacing={10} minChildWidth={{ lg: "350px" }}>

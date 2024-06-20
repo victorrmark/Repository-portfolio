@@ -49,6 +49,12 @@ button[type="submit"]:hover {
     background-color: #2a7afa;
 }
 
+button[type="submit"]:disabled {
+  background-color: #e5e7eb;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
 /* button[type="button"] {
     display: block;
     width: 100%;

@@ -12,9 +12,11 @@ const NewRepoForm = () => {
   const [description, setDescription] = useState('');
   const [isPrivate, setIsPrivate] = useState('false');
   const [autoInit, setAutoInit] = useState('false');
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     const token = import.meta.env.VITE_GITHUB_TOKEN;
     const data = {
@@ -39,19 +41,22 @@ const NewRepoForm = () => {
         toast.success('Repository created successfully!');
         setRepos((prevRepos) => [...prevRepos, newRepo])
         setFilteredRepos((prevRepos) => [...prevRepos, newRepo])
-
+        
         setName('');
         setDescription('');
         setIsPrivate('false');
         setAutoInit('false');
+        setLoading(false)
       } else {
         const errorData = await response.json();
         console.log(errorData)
         toast.error(`Failed to create repository: ${errorData.message}`);
+        setLoading(false)
       }
     } catch (error) {
       toast.error('Failed to create repository. Check console for details.');
       console.error(error);
+      setLoading(false)
     }
 
   };
@@ -97,7 +102,7 @@ const NewRepoForm = () => {
           </select>
         </div>
 
-        <button type="submit">Create Repository</button>
+        {loading ? <button disabled type="submit">Creating Repo...</button> :  <button type="submit">Create Repository</button>}
       </form>
       <ToastContainer />
     </div>
