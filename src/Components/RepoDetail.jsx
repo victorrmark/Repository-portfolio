@@ -120,11 +120,11 @@ const RepoDetail = () => {
                 {repo.homepage && (
                   <Button
                     as="a"
-                    variant="ghost"
+                    colorScheme="blue"
                     href={repo.homepage}
                     target="_blank"
                   >
-                    Website
+                    Live Site
                   </Button>
                 )}
                 <Button as={Link} to="/" leftIcon={<ArrowBackIcon />}>
