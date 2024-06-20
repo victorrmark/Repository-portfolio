@@ -26,7 +26,7 @@ const useFetch =(url) =>{
     };
 
     fetchData();
-  }, [url, token, repos]);
+  }, [url, token]);
 
   return {repos, setRepos, filteredRepos, setFilteredRepos, error }
 }
