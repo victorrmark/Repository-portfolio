@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import UserContext from "../assets/UserContext";
 import { Button, Stack } from "@chakra-ui/react";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
@@ -7,6 +7,11 @@ const Paginate = () => {
   const {currentPage, setCurrentPage, numberOfPages} = useContext(UserContext)
   const [focusedPage, setFocusedPage] = useState(1);
   const pageNumbers = [];
+
+  useEffect(()=>{
+
+    window.scrollTo(0, 0)
+  }, [currentPage])
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
