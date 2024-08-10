@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useFetch =(url) =>{
-  const token = import.meta.env.VITE_GITHUB_TOKEN;
+  // const token = import.meta.env.VITE_GITHUB_TOKEN;
   const [repos, setRepos] = useState(null);
   const [error, setError] = useState(null)
   const [filteredRepos, setFilteredRepos] = useState(null);
@@ -9,11 +9,11 @@ const useFetch =(url) =>{
   useEffect(() => {
     const fetchData = async () => {
       try{
-        const response = await fetch(url, {
+        const response = await fetch(url/*, {
           headers: {
             'Authorization': `token ${token}`,
           },
-        });
+        }*/);
         const finalRes = await response.json();
         setRepos(finalRes);
         setFilteredRepos(finalRes);
@@ -26,7 +26,7 @@ const useFetch =(url) =>{
     };
 
     fetchData();
-  }, [url, token]);
+  }, [url]);
 
   return {repos, setRepos, filteredRepos, setFilteredRepos, error }
 }
